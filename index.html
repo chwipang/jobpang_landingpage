@@ -509,6 +509,18 @@
             margin-bottom: 20px;
         }
 
+        .card-indicator {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            flex-direction: column;
+            gap: 30px;        
+        }
+
         .feature-highlight {
             background: rgba(231, 57, 96, 0.15);
             border-left: 4px solid #E73960;
@@ -978,10 +990,16 @@
                 <div class="problem-card">
                     <div class="card-tag problem-tag">PROBLEM 01</div>
                     <h3 class="card-title">신중하게 기업을 선택하지만<br>맞지 않는 채용공고에 지원한다</h3>
-                    <p class="card-description">
-                        입사 지원 후 서류합격까지 평균 2-3주 소요<br>
-                        어렵게 합격 후에도 기업 문화 불일치로 퇴사하는 경우 발생
-                    </p>
+                    <div class="card-indicator">
+                        <div class="card-indicator-icon">📄</div>
+                        <div class="card-indicator-content">
+                            <div class="card-indicator-number">12%</div>
+                            <div class="card-indicator-label">서류합격률</div>
+                            <div class="card-indicator-bar">
+                                <div class="card-indicator-bar-fill"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="solution-card">
@@ -1003,14 +1021,38 @@
         <!-- Problem 02 & Solution 02 -->
         <div class="feature-block">
             <div class="problem-solution-wrapper">
-                <div class="problem-card">
+                <div class="problem-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
                     <div class="card-tag problem-tag">PROBLEM 02</div>
-                    <h3 class="card-title">잘못된 스펙 준비,<br>서류 작성</h3>
+                    <h3 class="card-title">구직자들은 모르는<br>기업의 비공개 채용기준</h3>
                     <p class="card-description">
-                        어떤 스펙을 준비해야 할지 모르겠다<br>
-                        서류를 어떻게 작성해야 할지 막연하다<br>
-                        내 서류가 경쟁력이 있는지 확인하고 싶다
+                        기업들은 공개하지 않는 숨겨진 채용 기준이 있습니다
                     </p>
+                    
+                    <div class="hidden-criteria">
+                        <div class="criteria-grid">
+                            <div class="criteria-item">
+                                <span class="criteria-icon">🎓</span>
+                                <div class="criteria-label">학력</div>
+                                <div class="criteria-status">비공개 기준</div>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-icon">💼</span>
+                                <div class="criteria-label">경력</div>
+                                <div class="criteria-status">비공개 기준</div>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-icon">📅</span>
+                                <div class="criteria-label">연령</div>
+                                <div class="criteria-status">비공개 기준</div>
+                            </div>
+                            <div class="criteria-item">
+                                <span class="criteria-icon">👤</span>
+                                <div class="criteria-label">성별</div>
+                                <div class="criteria-status">비공개 기준</div>
+                            </div>
+                        </div>
+                        <div class="hidden-badge">기업만 알고 있는 숨겨진 기준</div>
+                    </div>
                 </div>
 
                 <div class="solution-card">
