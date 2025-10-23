@@ -344,22 +344,14 @@
             border-color: #E73960;
             transform: translateY(-5px);
         }
+
+        /* Section 3 - 플랫폼 강점 */
         .stats-section {
             background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
             padding: 120px 60px;
-            min-height: 300vh;
             position: relative;
-            margin-top:20px;
-        }
-
-        .stats-sticky-container {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index:1;
+            z-index: 1;
+            margin-top: 40px;
         }
 
         .stats-header {
@@ -382,10 +374,10 @@
         }
 
         .stats-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -393,14 +385,11 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(231, 57, 96, 0.2);
             border-radius: 16px;
-            padding: 60px 50px;
+            padding: 50px 40px;
             text-align: center;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            opacity: 0.3;
-            transform: scale(0.95);
-            width: 100%;
         }
 
         .stat-card::before {
@@ -413,25 +402,17 @@
             background: linear-gradient(90deg, #E73960 0%, #FF6B8A 100%);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.6s ease;
+            transition: transform 0.4s ease;
         }
 
-        .stat-card.active {
-            opacity: 1;
-            transform: scale(1.05);
-            background: rgba(231, 57, 96, 0.15);
+        .stat-card:hover {
+            background: rgba(231, 57, 96, 0.08);
             border-color: #E73960;
-            box-shadow: 0 20px 60px rgba(231, 57, 96, 0.4);
-            z-index: 10;
+            transform: translateY(-10px);
         }
 
-        .stat-card.active::before {
+        .stat-card:hover::before {
             transform: scaleX(1);
-        }
-
-        .stat-card.passed {
-            opacity: 0.5;
-            transform: scale(0.95);
         }
 
         .stat-number {
@@ -441,13 +422,6 @@
             margin-bottom: 20px;
             display: block;
             line-height: 1;
-            transition: all 0.6s ease;
-        }
-
-        .stat-card.active .stat-number {
-            color: #FF6B8A;
-            text-shadow: 0 0 30px rgba(231, 57, 96, 0.6);
-            transform: scale(1.1);
         }
 
         .stat-label {
@@ -455,23 +429,12 @@
             color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
             margin-bottom: 10px;
-            transition: all 0.6s ease;
-        }
-
-        .stat-card.active .stat-label {
-            color: #ffffff;
-            font-size: 22px;
         }
 
         .stat-description {
             font-size: 16px;
             color: rgba(255, 255, 255, 0.6);
             margin-top: 15px;
-            transition: all 0.6s ease;
-        }
-
-        .stat-card.active .stat-description {
-            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Section 4 - 핵심 기능 */
@@ -964,47 +927,43 @@
 
     <!-- Section 3: 플랫폼 강점 -->
     <section id="stats" class="stats-section">
-        <div class="stats-sticky-container">
-            <div style="width: 100%;">
-                <div class="stats-header">
-                    <h2>
-                        국내 1위 취업컨설팅 브랜드<br>
-                        <span class="brand-name">잡프라이즈</span>의 노하우를 경험하세요
-                    </h2>
-                </div>
+        <div class="stats-header">
+            <h2>
+                국내 1위 취업컨설팅 브랜드<br>
+                <span class="brand-name">잡프라이즈</span>의 노하우를 경험하세요
+            </h2>
+        </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card passed" data-index="0">
-                        <span class="stat-number">70,000+</span>
-                        <div class="stat-label">누적 구직자수</div>
-                    </div>
-                    <div class="stat-card passed" data-index="1">
-                        <span class="stat-number">4,000+</span>
-                        <div class="stat-label">최종 합격자수</div>
-                    </div>
-                    <div class="stat-card passed" data-index="2">
-                        <span class="stat-number">91%</span>
-                        <div class="stat-label">취업 성공률</div>
-                    </div>
-                    <div class="stat-card passed" data-index="3">
-                        <span class="stat-number">1.5~3개월</span>
-                        <div class="stat-label">최종 합격 소요기간</div>
-                        <div class="stat-description">평균 구직 기간 3개월</div>
-                    </div>
-                    <div class="stat-card passed" data-index="4">
-                        <span class="stat-number">350+</span>
-                        <div class="stat-label">협력 기업</div>
-                    </div>
-                    <div class="stat-card active" data-index="5">
-                        <span class="stat-number">520+</span>
-                        <div class="stat-label">누적 인사담당자수</div>
-                        <div class="stat-description">협력 기업 인사담당자 350명</div>
-                    </div>
-                    <div class="stat-card" data-index="6">
-                        <span class="stat-number">30,000건</span>
-                        <div class="stat-label">합격 입사서류 데이터</div>
-                    </div>
-                </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">70,000+</span>
+                <div class="stat-label">누적 구직자수</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">4,000+</span>
+                <div class="stat-label">최종 합격자수</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">91%</span>
+                <div class="stat-label">취업 성공률</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">1.5~3개월</span>
+                <div class="stat-label">최종 합격 소요기간</div>
+                <div class="stat-description">평균 구직 기간 3개월</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">350+</span>
+                <div class="stat-label">협력 기업</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">520+</span>
+                <div class="stat-label">누적 인사담당자수</div>
+                <div class="stat-description">협력 기업 인사담당자 350명</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">30,000건</span>
+                <div class="stat-label">합격 입사서류 데이터</div>
             </div>
         </div>
     </section>
